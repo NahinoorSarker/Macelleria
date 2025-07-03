@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বিনিয়োগ প্রস্তাবনা: গ্রুমো নেভানোর প্রিমিয়াম হালাল বুটিক (Investor Focused)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 380px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 320px;
+            }
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1A535C;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF6B6B;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after {
+            left: -16px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .stepper-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .stepper-circle {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: #1A535C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .stepper-content {
+            margin-left: 1rem;
+        }
+        .stepper-line {
+            width: 2px;
+            height: 3rem;
+            background-color: #1A535C;
+            margin-left: 1.45rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#1A535C] mb-2">বিনিয়োগ প্রস্তাবনা: প্রিমিয়াম হালাল বুটিক</h1>
+            <p class="text-xl text-gray-600">গ্রুমো নেভানোতে একটি উচ্চ-বৃদ্ধির সুযোগ: ঐতিহ্য, গুণমান এবং সামাজিক দায়বদ্ধতার সংযোগ</p>
+        </header>
+
+        <section class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🤝</div>
+                    <h3 class="text-lg font-bold text-[#1A535C]">নৈতিক ও সামাজিক প্রভাব</h3>
+                    <p class="text-sm text-gray-600">লাভের ২০% "বাইতুল মাল" ফান্ডে প্রদানের মাধ্যমে সম্প্রদায়ের প্রতি দায়বদ্ধতা এবং একটি ইতিবাচক ব্র্যান্ড ইমেজ তৈরি।</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">📈</div>
+                    <h3 class="text-lg font-bold text-[#1A535C]">উচ্চ লাভের সম্ভাবনা</h3>
+                    <p class="text-sm text-gray-600">মূল্য সংযোজিত পণ্য (Pronto a Cuocere) এবং Braceria সার্ভিস থেকে উচ্চ মার্জিন অর্জনের সুযোগ।</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">💰</div>
+                    <h3 class="text-lg font-bold text-[#1A535C]">সরকারি প্রণোদনা</h3>
+                    <p class="text-sm text-gray-600">"Resto al Sud" তহবিলের মাধ্যমে ৫০% অনুদান, যা ব্যক্তিগত ঝুঁকিকে সর্বনিম্ন করে।</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🌱</div>
+                    <h3 class="text-lg font-bold text-[#1A535C]">লিন স্টার্টআপ মডেল</h3>
+                    <p class="text-sm text-gray-600">কম বিনিয়োগে ব্যবসা শুরু করে দ্রুত লাভজনকতা অর্জন এবং টেকসই প্রবৃদ্ধির একটি শক্তিশালী ভিত্তি স্থাপন।</p>
+                </div>
+            </div>
+        </section>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">ব্যবসা শুরুর বিস্তারিত কর্ম পরিকল্পনা (Action Plan)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="stepper-item">
+                            <div class="stepper-circle">১</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">পেশাদার পরামর্শক নিয়োগ</h3>
+                                <p class="text-sm">"Resto al Sud" এবং নতুন ব্যবসা স্থাপনে অভিজ্ঞ একজন `Commercialista` নিয়োগ।</p>
+                            </div>
+                        </div>
+                        <div class="stepper-line"></div>
+                        <div class="stepper-item">
+                            <div class="stepper-circle">২</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">তহবিল আবেদন ও অনুমোদন</h3>
+                                <p class="text-sm">বিস্তারিত ব্যবসায়িক পরিকল্পনা তৈরি এবং Invitalia পোর্টালে "Resto al Sud" এর জন্য আবেদন।</p>
+                            </div>
+                        </div>
+                        <div class="stepper-line"></div>
+                        <div class="stepper-item">
+                            <div class="stepper-circle">৩</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">আইনি ও আমলাতান্ত্রিক সেটআপ</h3>
+                                <p class="text-sm">Partita IVA খোলা, চেম্বার অফ কমার্সে নিবন্ধন এবং ব্যাংক অ্যাকাউন্ট খোলা।</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                         <div class="stepper-item">
+                            <div class="stepper-circle">৪</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">স্থান ও সরবরাহকারী চূড়ান্তকরণ</h3>
+                                <p class="text-sm">দোকানের লিজ চুক্তি স্বাক্ষর এবং কৃষক ও হালাল কসাইখানার সাথে চুক্তি চূড়ান্তকরণ।</p>
+                            </div>
+                        </div>
+                        <div class="stepper-line"></div>
+                        <div class="stepper-item">
+                            <div class="stepper-circle">৫</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">লাইসেন্সিং ও সংস্কার</h3>
+                                <p class="text-sm">দোকানের সংস্কার, সরঞ্জাম স্থাপন এবং ASL অনুমোদন ও হালাল সার্টিফিকেশন প্রক্রিয়া শুরু।</p>
+                            </div>
+                        </div>
+                        <div class="stepper-line"></div>
+                        <div class="stepper-item">
+                            <div class="stepper-circle">৬</div>
+                            <div class="stepper-content">
+                                <h3 class="font-bold text-lg">লঞ্চ এবং বিপণন</h3>
+                                <p class="text-sm">SUAP-এ SCIA ফাইল করা, প্রথম স্টক কেনা এবং একটি শক্তিশালী বিপণন অভিযানের মাধ্যমে ব্যবসা চালু করা।</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">ন্যূনতম বিনিয়োগ, সর্বোচ্চ দক্ষতা (লিন মডেল)</h2>
+                <p class="text-center text-gray-600 mb-4">মোট আনুমানিক খরচ: €35,000, যা "Resto al Sud"-এর অর্থায়নের অধীনে সহজেই সুরক্ষিত করা যায়।</p>
+                <div class="chart-container" style="height:280px;">
+                    <canvas id="startupCostChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                 <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">বৈচিত্র্যময় মাসিক আয়ের উৎস</h2>
+                 <p class="text-center text-gray-600 mb-4">প্রথম বছরের জন্য আনুমানিক মাসিক মোট আয়: €12,500।</p>
+                 <div class="chart-container" style="height:280px;">
+                    <canvas id="revenueSourceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2 text-center">আর্থিক প্রক্ষেপণ: ৫ বছরের বৃদ্ধি ও সামাজিক অবদান</h2>
+                <p class="text-center text-gray-600 mb-6">আমাদের মডেলে শক্তিশালী আয়ের বৃদ্ধির পাশাপাশি নিট লাভের একটি অংশ সরাসরি সামাজিক কল্যাণে অবদান রাখে।</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-center mb-2 text-[#1A535C]">বার্ষিক রাজস্ব বৃদ্ধি (€)</h3>
+                        <div class="chart-container" style="height:280px;">
+                           <canvas id="revenueGrowthChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                         <h3 class="text-xl font-semibold text-center mb-2 text-[#1A535C]">নীট লাভ এবং বাইতুল মাল ফান্ডের বিভাজন (€)</h3>
+                         <div class="chart-container" style="height:280px;">
+                           <canvas id="profitSplitChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                 <div class="mt-8 text-center bg-gray-100 p-4 rounded-lg">
+                    <h3 class="font-bold text-2xl text-[#1A535C]">আমাদের প্রতিশ্রুতি: বাইতুল মাল ফান্ড</h3>
+                    <p class="text-gray-700 mt-2">আমরা আমাদের ব্যবসার নিট লাভের <span class="font-bold text-[#FF6B6B]">২০%</span> সরাসরি একটি "বাইতুল মাল" ফান্ডে জমা করার প্রতিশ্রুতি দিচ্ছি।</p>
+                    <p class="text-lg mt-2">৫ বছরে আনুমানিক মোট অবদান: <span class="font-bold text-3xl text-[#4ECDC4]">€46,000+</span></p>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">৫-বছরের কৌশলগত রোডম্যাপ: একটি পর্যায়ক্রমিক বৃদ্ধি পরিকল্পনা</h2>
+                 <div class="timeline mt-4">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3 class="font-bold text-xl text-[#FF6B6B]">বছর ১: ভিত্তি স্থাপন</h3>
+                            <p class="mt-2 text-gray-700">"Resto al Sud" তহবিল সুরক্ষিত করা, ব্যবসা চালু করা এবং স্থানীয় বাজারে শক্তিশালী ব্র্যান্ড প্রতিষ্ঠা করে প্রথম বছরেই লাভজনকতা অর্জন।</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3 class="font-bold text-xl text-[#FF6B6B]">বছর ২: পণ্য সম্প্রসারণ</h3>
+                             <p class="mt-2 text-gray-700">উচ্চ-মার্জিনের "Pronto a Cuocere" (রান্নার জন্য প্রস্তুত) আইটেম চালু করে লাভের মার্জিন বৃদ্ধি এবং গ্রাহকদের জন্য আকর্ষণীয় অফার তৈরি করা।</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3 class="font-bold text-xl text-[#FF6B6B]">বছর ৩: ডিজিটাল উপস্থিতি</h3>
+                            <p class="mt-2 text-gray-700">একটি ই-কমার্স ওয়েবসাইট চালু করে বাজারের পরিধি বাড়ানো এবং গ্রুমো নেভানো ও পার্শ্ববর্তী এলাকায় হোম ডেলিভারি পরিষেবা প্রদান।</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3 class="font-bold text-xl text-[#FF6B6B]">বছর ৪: "Risto-Macelleria" অভিজ্ঞতা</h3>
+                            <p class="mt-2 text-gray-700">একটি Braceria (গ্রিল) পরিষেবা চালু করে অনন্য ইন-স্টোর অভিজ্ঞতা তৈরি করা, যা একটি নতুন রাজস্ব প্রবাহ এবং শক্তিশালী বিপণন সরঞ্জাম হিসেবে কাজ করবে।</p>
+                        </div>
+                    </div>
+                     <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3 class="font-bold text-xl text-[#FF6B6B]">বছর ৫: আঞ্চলিক সম্প্রসারণ</h3>
+                            <p class="mt-2 text-gray-700">স্থানীয় রেস্তোরাঁর সাথে B2B সরবরাহ চুক্তি স্থাপন এবং দ্বিতীয় শাখা বা ফ্র্যাঞ্চাইজ মডেল তৈরির সম্ভাব্যতা যাচাই করে ব্যবসাকে স্কেল করা।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="text-center mt-12">
+             <h2 class="text-2xl font-bold text-[#1A535C]">একটি লাভজনক এবং অর্থবহ অংশীদারিত্বের আমন্ত্রণ</h2>
+             <p class="text-lg text-gray-600 mt-2 max-w-3xl mx-auto">এই প্রকল্পটি কেবল একটি ব্যবসায়িক উদ্যোগ নয়, এটি একটি সামাজিক দায়বদ্ধতার প্রতিফলন। আমরা আপনাকে এমন একটি যাত্রায় অংশীদার হওয়ার জন্য আমন্ত্রণ জানাচ্ছি যা আর্থিক লাভের পাশাপাশি সামাজিক কল্যাণও নিশ্চিত করে।</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(label, maxLength) {
+            if (label.length <= maxLength) { return label; }
+            const words = label.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) { lines.push(currentLine.trim()); }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) { return label.join(' '); }
+            return label;
+        };
+
+        const chartColors = {
+            darkTeal: '#1A535C',
+            turquoise: '#4ECDC4',
+            coral: '#FF6B6B',
+            yellow: '#FFE66D',
+            lightGrey: '#F8F9FA'
+        };
+
+        const startupCostLabels = ['ব্যবহৃত সরঞ্জাম', 'ভাড়া ও সংস্কার', 'প্রাথমিক মাংসের স্টক', 'লাইসেন্স ও আমলাতন্ত্র', 'বিপণন', 'কন্টিনজেন্সি'];
+        new Chart(document.getElementById('startupCostChart'), {
+            type: 'bar',
+            data: {
+                labels: startupCostLabels.map(label => wrapLabel(label, 16)),
+                datasets: [{
+                    label: 'খরচ (€)',
+                    data: [18000, 5000, 3000, 3000, 1000, 5000],
+                    backgroundColor: [chartColors.darkTeal, chartColors.turquoise, chartColors.coral, chartColors.yellow, '#F7B801', '#A5A58D'],
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback } } },
+                scales: { x: { ticks: { callback: value => '€' + value / 1000 + 'k' } } }
+            }
+        });
+        
+        new Chart(document.getElementById('revenueSourceChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['গরুর মাংস (Beef)', 'মুরগি (Chicken)', 'ছাগল (Goat)', 'Pronto a Cuocere'],
+                datasets: [{
+                    label: 'আয়ের উৎস (€)',
+                    data: [5000, 4375, 1875, 1250], // Updated distribution for €12,500
+                    backgroundColor: [chartColors.darkTeal, chartColors.turquoise, chartColors.coral, chartColors.yellow],
+                    borderColor: chartColors.lightGrey,
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: context => {
+                                let label = context.dataset.label || '';
+                                if (label) { label += ': '; }
+                                if (context.parsed !== null) { label += new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(context.parsed); }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        const years = ['বছর ১', 'বছর ২', 'বছর ৩', 'বছর ৪', 'বছর ৫'];
+        const revenueData = [150000, 187500, 225000, 258750, 284625]; // Updated revenue
+        new Chart(document.getElementById('revenueGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'মোট রাজস্ব',
+                    data: revenueData,
+                    borderColor: chartColors.turquoise,
+                    backgroundColor: 'rgba(78, 205, 196, 0.2)',
+                    fill: true, tension: 0.4, pointBackgroundColor: chartColors.turquoise,
+                    pointBorderColor: '#fff', pointHoverRadius: 7, pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { ticks: { callback: value => '€' + value / 1000 + 'k' } } }
+            }
+        });
+
+        const totalProfitData = [23625, 36094, 47812, 57985, 64908]; // Updated profit
+        const retainedProfitData = totalProfitData.map(p => p * 0.8);
+        const baitulmalData = totalProfitData.map(p => p * 0.2);
+        new Chart(document.getElementById('profitSplitChart'), {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [
+                    {
+                        label: 'পুনরায় বিনিয়োগকৃত লাভ',
+                        data: retainedProfitData,
+                        backgroundColor: chartColors.darkTeal,
+                    },
+                    {
+                        label: 'বাইতুল মাল ফান্ড',
+                        data: baitulmalData,
+                        backgroundColor: chartColors.coral,
+                    }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { tooltip: { callbacks: { title: tooltipTitleCallback } } },
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, ticks: { callback: value => '€' + value / 1000 + 'k' } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
